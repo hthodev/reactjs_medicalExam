@@ -1,0 +1,95 @@
+.login-background {
+    height: 100vh;
+    
+    background: linear-gradient(135deg,
+    rgba(34,135,195,1) 0%, 
+    rgba(253,187,45,1) 100%);
+
+.login-container {
+        background-color: #fff;
+            position: absolute;
+            width: 400px;
+            height: 600px;
+            /* left: 30%; */
+            margin: auto;
+            border-radius: 28px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+    .login-content {
+            padding: 20%;
+            color: #111;
+    
+    .text-login {
+        text-align: center;
+        font-weight: 600;
+        font-size: 24px;
+        padding-top: 10px;
+    }
+    .login-input{
+        margin: 7px 0;
+        height: 4rem;
+        border-radius: 15px;
+    }
+    .btn-login {
+            width: 100%;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                height: 4rem;
+                border-radius: 15px;
+                outline: none;
+                border: none;
+                background: linear-gradient(135deg, #2287c3 0%, #fdbb2d 100%);
+                color: #fff;
+    }
+    .login-a {
+        font-size: 12px;
+        font-style: inherit;
+        margin-top: 10px;
+        text-align: center;
+    }    
+    .login-icon {
+        font-size: 35px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+
+        .google {
+            background-color: red;
+            border-radius: 50%;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10%;
+        }
+        .facebook {
+                background-color: rgb(13, 13, 184);
+                    border-radius: 50%;
+                    color: #fff;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+        }
+    } 
+    .custom-input-password{
+        position: relative;
+        .eye-custom {
+                position: absolute;
+                right: 24px;
+                top: 21px;
+                cursor: pointer;
+            }
+    }
+                
+    }
+}
+}
+

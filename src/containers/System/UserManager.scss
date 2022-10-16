@@ -1,0 +1,48 @@
+
+    
+.btn-custom {
+    display: inline;
+    margin-right: 21%;
+}
+
+.modal-doctor-container {
+    
+    .modal-doctor-body{
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-left: 10%;
+        margin-right: 10%;
+        
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+        input { 
+            border-radius: 3px;
+            height: 30px;
+            border: 1px solid grey;
+            outline: none;
+            padding-left: 10px;
+            padding-right: 10px;
+            }
+        &.phone{
+            width: 75%;
+        }
+        &.gender {
+            width: 21%;
+        }
+        &.address{
+            width: 99%;
+        }
+        }
+    }
+    .modal-footer {
+        margin-right: 10%;
+        
+    }
+    .modal-footer:hover {
+        color: red;
+    }
+    
+}
