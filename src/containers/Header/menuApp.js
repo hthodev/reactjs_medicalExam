@@ -1,15 +1,29 @@
 export const adminMenu = [
-    { //hệ thống
-        name: 'menu.system.header', menus: [
-            {
-                name: 'menu.system.system-administrator.header',
-                subMenus: [
-                    { name: 'menu.system.system-administrator.user-manage', link: '/system/user-manage' },
-                    { name: 'menu.system.system-administrator.product-manage', link: '/system/product-manage' },
-                    { name: 'menu.system.system-administrator.register-package-group-or-account', link: '/system/register-package-group-or-account' },
-                ]
-            },
-            // { name: 'menu.system.system-parameter.header', link: '/system/system-parameter' },
-        ]
-    },
+  {
+    // account management
+    name: "menu.system.admin.manage-account",
+    menus: [
+      {
+        name: "menu.system.admin.manage-doctor",
+        link: "/system/doctor-manager",
+      },
+      {
+        name: "menu.system.admin.manage-user",
+        link: "/system/user-redux",
+      },
+      // { name: 'menu.system.system-parameter.header', link: '/system/system-parameter' },
+    ],
+  },
+
+  {
+    // clinic management
+    name: "menu.system.admin.clinic",
+    link: "/system/clinic-managerment",
+  },
+
+  {
+    // specialty management
+    name: "menu.system.admin.specialty",
+    link: "/system/clinic-managerment",
+  },
 ];

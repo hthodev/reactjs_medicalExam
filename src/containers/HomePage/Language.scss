@@ -1,0 +1,20 @@
+.flag {
+    cursor: pointer;
+
+    .language-vi {
+        &:active {
+            background-color: blue;
+        }
+    }
+
+    .language-en {
+        &:active {
+            background-color: blue;
+        }
+    }
+}
+.dropdown-item.active {
+    color: black !important;
+    text-decoration: none !important;
+    background-color: white !important;
+}

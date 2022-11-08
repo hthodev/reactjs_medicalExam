@@ -3,7 +3,6 @@
 .header-container {
     z-index: 99;
     display: flex;
-    justify-content: space-between;
     background-color: $colormain;
     color: $common-text-color;
     height: 40px;
@@ -17,7 +16,19 @@
             background-color: darken($colormain, 5);
         }
         i {
-            font-size: $base-size + 1px;
+            fontSize: $base-size + 1px;
+        }
+    }
+
+    .right-content{
+        display: flex;
+        position: absolute;
+            right: 0;
+            align-items: center;
+        .language{
+           
+            margin-left: 4px;
+           
         }
     }
 }

@@ -94,7 +94,7 @@ input {
   animation: none;
   direction: ltr;
   border: 0;
-  font-size: 14px;
+  fontSize: 14px;
   line-height: 24px;
   border-radius: 5px;
   position: absolute;
@@ -421,7 +421,7 @@ input {
 }
 
 .flatpickr-current-month {
-  font-size: 135%;
+  fontSize: 135%;
   font-weight: 300;
   color: inherit;
   position: absolute;
@@ -456,7 +456,7 @@ input {
     padding: 0 0 0 0.5ch;
     margin: 0;
     display: inline-block;
-    font-size: inherit;
+    fontSize: inherit;
     font-family: inherit;
     font-weight: 300;
     line-height: inherit;
@@ -473,7 +473,7 @@ input {
     }
 
     &[disabled], &[disabled]:hover {
-      font-size: 100%;
+      fontSize: 100%;
       pointer-events: none;
     }
   }
@@ -508,7 +508,7 @@ input {
   box-sizing: border-box;
   color: inherit;
   cursor: pointer;
-  font-size: inherit;
+  fontSize: inherit;
   font-family: inherit;
   font-weight: 300;
   height: $monthNavHeight - 6px;
@@ -562,7 +562,7 @@ input {
 
 span.flatpickr-weekday {
   cursor: default;
-  font-size: 90%;
+  fontSize: 90%;
   line-height: 1;
   margin: 0;
   text-align: center;
@@ -820,7 +820,7 @@ span.flatpickr-weekday {
     padding: 0;
     height: inherit;
     line-height: inherit;
-    font-size: 14px;
+    fontSize: 14px;
     position: relative;
     box-sizing: border-box;
     -webkit-appearance: textfield;

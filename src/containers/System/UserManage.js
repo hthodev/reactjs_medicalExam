@@ -111,7 +111,7 @@ class UserManage extends Component {
         <div className="mx-1">
           <button
             className="btn btn-primary px-3"
-            onClick={() => this.handleOpenWindowDoctor()}
+            onClick={() => this.toggleOpenWindowDoctor()}
           >
             <i className="mr-3 fas fa-plus" />
             Add Doctor
