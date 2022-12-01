@@ -1,0 +1,82 @@
+
+{
+    "home-header": {
+        "specialty": "Chuyên khoa",
+        "search-doctor": "Tìm bác sĩ theo chuyên khoa",
+        "health-facility": "Cơ sở vật chất",
+        "select-room": "Chọn phòng khám",
+        "doctor" : "Bác sĩ",
+        "select-doctor": "Chọn một bác sĩ giỏi",
+        "fee": "Gói kiểm tra",
+        "check-health": "Kiểm tra sức khỏe tổng quát",
+        "support": "Hỗ trợ",
+        "welcome": "Xin chào, "
+        
+        
+    },
+    "banner": {
+        "main-content": "NỀN TẢNG Y TẾ",
+        "sub-content": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
+        "placeholder": "Tìm mọi thứ"
+    },
+    "option": {
+        "specialty-exam": "Khám chuyển khoa",
+        "remote-exam": "Khám từ xa",
+        "general-exam": "Khám tổng quát",
+        "medical-test": "Xét nghiệm y học",
+        "mental-health": "Sức khỏe tinh thần",
+        "dental-exam": "Khám nha khoa"
+    },
+
+    "section" :{
+        "popular-specialty": "Chuyên khoa phổ biến",
+        "see-more": "Xem Thêm"
+    },
+
+    "common": {
+        "add": "Thêm",
+        "edit": "Sửa",
+        "delete": "Xóa",
+        "decentralize": "Phân quyền",
+        "close": "Đóng",
+        "save": "Lưu",
+        "refresh": "Refresh",
+        "accept": "Chấp nhận",
+        "confirm": "Xác nhận",
+        "confirm-this-task": "Bạn có chắc chắn thực hiện tác vụ này?",
+        "fail-to-load-data": "Không thể tải về dữ liệu",
+        "unknown-error": "Có lỗi xảy ra",
+        "internal-server-error": "Lỗi kết nối",
+        "bad-request": "Yêu cầu không hợp lệ",
+        "forbiden-request": "Thông tin truyền vào không hợp lệ",
+        "fail-to-load-all-code": "Không thể tải về dữ liệu allcode",
+        "sum": "Tổng",
+        "date-range-invalid": "Khoảng thời gian không hợp lệ",
+        "languages": "🇻🇳 Việt Nam"
+    },
+    "login": {
+        "login": "Đăng nhập",
+        "username": "Tên đăng nhập",
+        "password": "Mật khẩu",
+        "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!"
+    },
+    "menu": {
+        "system": {
+            "system-administrator": {
+                "header": "Quản trị hệ thống",
+                "user-manage": "Quản lý người sử dụng",
+                "user-redux": "Quản lý gói",
+                "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
+            },
+            "admin" : {
+                "manage-account": "Quản lý tài khoản",
+                "manage-doctor": "Quản lý bác sĩ",
+                "manage-user": "Quản lý người dùng",
+                
+                "clinic": "Quản lý phòng khám",
+                "specialty": "Quản lý chuyên khoa"
+
+            }
+        }
+    }
+}

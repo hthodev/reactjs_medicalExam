@@ -1,0 +1,125 @@
+.slick-prev {
+    z-index: 1 !important;
+    height: 65px !important;
+    width: 50px !important;
+    left: -10px !important;
+    background: #d7d7d7 !important;
+    opacity: 0.9 !important;
+
+    &:hover {
+        background-color: #fff !important;
+        opacity: 100 !important;
+    }
+
+}
+
+.slick-prev::before,
+.slick-next::before {
+    // content: "\e257" !important;
+
+    color: red !important;
+}
+
+.slick-next {
+    z-index: 1000 !important;
+    height: 65px !important;
+    width: 50px !important;
+    right: -10px !important;
+    background: #d7d7d7 !important;
+    opacity: 0.9 !important;
+
+    &:hover {
+        background-color: #fff !important;
+        opacity: 100 !important;
+    }
+}
+
+.section-parent{
+
+    &.section-background{
+        background-color: #f5f5f5;
+    } 
+    .section-body {
+
+        .specialty-customize {
+            
+           
+            .bg-img {
+                width: 90%;
+                height: 150px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #eee;
+                
+            
+            &.section-specialty {
+                background: url(../../assets/specialty.jpg);
+                background-size: cover;
+            }
+            
+            &.section-medical-facility {
+                background: url(../../assets/specialty.jpg);
+                background-size: cover;
+            }
+            &.section-doctor-outstanding{
+                background: url(../../assets/doctor.jpg);
+                background-size: cover;
+                border-radius: 50%;
+                width: 180px;
+                height: 180px;
+            }
+            }
+            
+            
+        }
+
+    }
+}
+
+.section-parent {
+    height: 330px;
+    
+
+    .section-container {
+        margin: 0 7%;
+        padding-top: 3%;
+        display: flex;
+        flex-direction: column;
+
+        .section-header {
+            height: 50px;
+            padding-bottom: 1%;
+            
+            .title-section {
+                fontSize: 22px;
+                font-weight: 600;
+            }
+
+            .btn-section {
+                float: right;
+                border: none;
+                outline: none;
+                display: block;
+                background-color: #ebebeb;
+                color: #333;
+                cursor: pointer;
+                text-transform: uppercase;
+
+                &:hover {
+                    color: #fff;
+                    background-color: black;
+                }
+            }
+        }
+    }
+}
+
+.home-footer{
+    text-align: center;
+    padding-top: 6%;
+
+    a{
+        text-decoration: unset;
+    }
+}
