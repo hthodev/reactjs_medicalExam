@@ -58,7 +58,7 @@
 }
 
 .home-header-banner {
-    background-image: url(../../assets/headerbackground.jpg);
+    background: url(../../assets/headerbackground.jpg);
     height: 65vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -113,7 +113,7 @@
         justify-content: center;
         height: 40%;
         padding-bottom: 15px;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+        background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
         .option {
             text-align: center;
             display: flex;

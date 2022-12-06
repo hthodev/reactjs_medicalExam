@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { connect } from "react-redux";
 import _ from "lodash";
+import CommonUtils from "../../utils/CommonUtils";
 class ModalEditAccount extends Component {
   constructor(props) {
     super(props);
@@ -11,11 +12,17 @@ class ModalEditAccount extends Component {
       lastName: "",
       address: "",
       phone: "",
+      image: "",
       gender: "0",
+      preImg: "",
     };
   }
   componentDidMount() {
     let data = this.props.currentAccount;
+    let imgBase64 = "";
+    if (data.image) {
+      imgBase64 = new Buffer(data.image, "base64").toString("binary");
+    }
     if (data && !_.isEmpty(data)) {
       this.setState({
         email: data.email,
@@ -23,6 +30,7 @@ class ModalEditAccount extends Component {
         lastName: data.lastName,
         address: data.address,
         phone: data.phone,
+        image: imgBase64,
         gender: String(data.gender),
         id: data.id,
       });
@@ -61,8 +69,23 @@ class ModalEditAccount extends Component {
     this.props.toggleFromParent();
   };
 
+  handleOnChangImage = async (event) => {
+    let data = event.target.files;
+    let file = data[0];
+
+    console.log("file: ", data[0]);
+
+    if (file) {
+      let base64 = await CommonUtils.getBase64(file);
+
+      console.log("image: ", base64);
+      this.setState({
+        image: base64,
+      });
+    }
+  };
   render() {
-    console.log("check props: ", this.props);
+    console.log("check props: ", this.state);
     return (
       <Modal
         isOpen={this.props.isOpen}
@@ -128,6 +151,31 @@ class ModalEditAccount extends Component {
                 onChange={(event) => this.handleOnChangInput(event, "address")}
                 value={this.state.address}
               />
+            </div>
+            <div className="load-img">
+              <div>
+                <label class="form-label" for="customFile">
+                  Default file input example
+                </label>
+                <input
+                  type="file"
+                  class="form-control"
+                  onChange={(event) => {
+                    this.handleOnChangImage(event);
+                  }}
+                />
+              </div>
+
+              <div className="preview-image">
+                {this.state.image ? (
+                  <div
+                    className="image-content"
+                    style={{
+                      backgroundImage: `url(data:image/png;base64${this.state.image}`,
+                    }}
+                  />
+                ) : null}
+              </div>
             </div>
           </div>
         </ModalBody>

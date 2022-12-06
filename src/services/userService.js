@@ -21,3 +21,7 @@ export const editAccount = (id, data) => {
 export const deleteAccount = (id) => {
   return axios.delete(`/remove-account?id=${id}`);
 };
+
+export const getTopDoctor = (limit) => {
+  return axios.get(`getTop-doctor?limit=${limit}`);
+};

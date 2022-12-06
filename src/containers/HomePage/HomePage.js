@@ -6,6 +6,7 @@ import MedicalFacility from "./Section/MedicalFacility";
 import DoctorOutStanding from "./Section/DoctorOutStanding";
 import HomeFooter from "./HomeFooter";
 import "./HomePage.scss";
+import { fetchTopDoctor } from "../../store/actions";
 class HomePage extends Component {
   render() {
     let settings = {
@@ -34,7 +35,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return { loadTopDoctor: () => dispatch(fetchTopDoctor()) };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

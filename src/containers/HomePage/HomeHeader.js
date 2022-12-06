@@ -21,7 +21,6 @@ class HomeHeader extends Component {
   };
 
   render() {
-    console.log("check 2: ", LANGUAGES);
     return (
       <React.Fragment>
         <div className="home-header-container">

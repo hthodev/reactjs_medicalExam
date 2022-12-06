@@ -4,9 +4,29 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FormattedMessage } from "react-intl";
-
+import * as actions from "../../../store/actions";
+import { LANGUAGES } from "../../../utils";
 class DoctorOutStanding extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      arrDoctors: [],
+    };
+  }
+  componentDidMount() {
+    this.props.loadTopDoctor();
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.topDoctorRedux !== this.props.topDoctorRedux) {
+      this.setState({
+        arrDoctors: this.props.topDoctorRedux,
+      });
+    }
+  }
+
   render() {
+    let arrDoctors = this.state.arrDoctors;
+    let { language } = this.props;
     return (
       <div className="section-parent section-background">
         <div className="section-container">
@@ -22,75 +42,37 @@ class DoctorOutStanding extends Component {
 
           <div className="section-body">
             <Slider {...this.props.settings}>
-              <div className="specialty-customize">
-                <div className="outer-bg">
-                  <div className="bg-img  section-doctor-outstanding" />
-                </div>
-                <div className="position text-center">
-                  <div className=""> Giao su tien si </div>
-                  <div className=""> Co xuong khop</div>
-                </div>
-              </div>
+              {arrDoctors &&
+                arrDoctors.length > 0 &&
+                arrDoctors.map((item, index) => {
+                  let imgBase64;
+                  if (item.image) {
+                    imgBase64 = new Buffer(item.image, "base64").toString(
+                      "binary"
+                    );
+                  }
+                  let nameVi = `${item.positionData.valueVI}, ${item.firstName} ${item.lastName}`;
+                  let nameEng = `${item.positionData.valueENG}, ${item.lastName} ${item.firstName} `;
 
-              <div className="specialty-customize">
-                <div className="outer-bg">
-                  <div className="bg-img  section-doctor-outstanding" />
-                </div>
-                <div className="position text-center">
-                  <div className=""> Giao su tien si </div>
-                  <div className=""> Co xuong khop</div>
-                </div>
-              </div>
-
-              <div className="specialty-customize">
-                <div className="outer-bg">
-                  <div className="bg-img  section-doctor-outstanding" />
-                </div>
-                <div className="position text-center">
-                  <div className=""> Giao su tien si </div>
-                  <div className=""> Co xuong khop</div>
-                </div>
-              </div>
-
-              <div className="specialty-customize">
-                <div className="outer-bg">
-                  <div className="bg-img  section-doctor-outstanding" />
-                </div>
-                <div className="position text-center">
-                  <div className=""> Giao su tien si </div>
-                  <div className=""> Co xuong khop</div>
-                </div>
-              </div>
-
-              <div className="specialty-customize">
-                <div className="outer-bg">
-                  <div className="bg-img  section-doctor-outstanding" />
-                </div>
-                <div className="position text-center">
-                  <div className=""> Giao su tien si </div>
-                  <div className=""> Co xuong khop</div>
-                </div>
-              </div>
-
-              <div className="specialty-customize">
-                <div className="outer-bg">
-                  <div className="bg-img  section-doctor-outstanding" />
-                </div>
-                <div className="position text-center">
-                  <div className=""> Giao su tien si </div>
-                  <div className=""> Co xuong khop</div>
-                </div>
-              </div>
-
-              <div className="specialty-customize">
-                <div className="outer-bg">
-                  <div className="bg-img  section-doctor-outstanding" />
-                </div>
-                <div className="position text-center">
-                  <div className=""> Giao su tien si </div>
-                  <div className=""> Co xuong khop</div>
-                </div>
-              </div>
+                  return (
+                    <div className="specialty-customize" key={index}>
+                      <div className="outer-bg">
+                        <div
+                          className="bg-img  section-doctor-outstanding"
+                          style={{
+                            backgroundImage: `url(data:image/png;base64${imgBase64}`,
+                          }}
+                        />
+                      </div>
+                      <div className="position text-center">
+                        <div className="">
+                          {language === LANGUAGES.VI ? nameVi : nameEng}
+                        </div>
+                        <div className=""> Co xuong khop</div>
+                      </div>
+                    </div>
+                  );
+                })}
             </Slider>
           </div>
         </div>
@@ -102,11 +84,15 @@ class DoctorOutStanding extends Component {
 const mapStateToProps = (state) => {
   return {
     isLoggedIn: state.user.isLoggedIn,
+    topDoctorRedux: state.admin.topDoctors,
+    language: state.app.language,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    loadTopDoctor: () => dispatch(actions.fetchTopDoctor()),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DoctorOutStanding);

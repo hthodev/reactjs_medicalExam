@@ -36,6 +36,20 @@
             width: 99%;
         }
         }
+        .load-img {
+            display: flex;
+            justify-content: space-between;
+            .preview-image {    
+                .image-content{    
+                    border: 3px solid #808080;
+                    width: 200px;
+                    height: 100px;
+                    background: center center no-repeat;
+                    background-size: contain;
+                    margin-left: 20%;
+                        }
+                    }
+                }
     }
     .modal-footer {
         margin-right: 10%;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { connect } from "react-redux";
 import { emitter } from "../../utils/emitter";
+import CommonUtils from "../../utils/CommonUtils";
 class ModalDoctor extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +13,7 @@ class ModalDoctor extends Component {
       lastName: "",
       address: "",
       phone: "",
+      image: "",
       gender: "0",
     };
     this.listenToEmitter();
@@ -25,6 +27,7 @@ class ModalDoctor extends Component {
         lastName: "",
         address: "",
         phone: "",
+        image: "",
         gender: "0",
       });
     });
@@ -62,7 +65,25 @@ class ModalDoctor extends Component {
     this.props.toggleFromParent();
   };
 
+  handleOnChangImage = async (event) => {
+    let data = event.target.files;
+    let file = data[0];
+
+    console.log("file: ", data[0]);
+
+    if (file) {
+      let base64 = await CommonUtils.getBase64(file);
+      let objectURL = URL.createObjectURL(file);
+
+      console.log("image: ", base64);
+      this.setState({
+        image: base64,
+      });
+    }
+  };
+
   render() {
+    console.log("check image: ", this.state.image);
     return (
       <Modal
         isOpen={this.props.isOpen}
@@ -136,6 +157,31 @@ class ModalDoctor extends Component {
                 onChange={(event) => this.handleOnChangInput(event, "address")}
                 value={this.state.address}
               />
+            </div>
+            <div className="load-img">
+              <div>
+                <label class="form-label" for="customFile">
+                  Default file input example
+                </label>
+                <input
+                  type="file"
+                  class="form-control"
+                  onChange={(event) => {
+                    this.handleOnChangImage(event);
+                  }}
+                />
+              </div>
+
+              <div className="preview-image">
+                {this.state.preImg ? (
+                  <div
+                    className="image-content"
+                    style={{
+                      backgroundImage: `url(data:image/png;base64${this.state.image}`,
+                    }}
+                  />
+                ) : null}
+              </div>
             </div>
           </div>
         </ModalBody>
