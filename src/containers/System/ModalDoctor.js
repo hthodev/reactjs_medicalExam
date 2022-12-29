@@ -69,13 +69,11 @@ class ModalDoctor extends Component {
     let data = event.target.files;
     let file = data[0];
 
-    console.log("file: ", data[0]);
 
     if (file) {
       let base64 = await CommonUtils.getBase64(file);
       let objectURL = URL.createObjectURL(file);
 
-      console.log("image: ", base64);
       this.setState({
         image: base64,
       });
@@ -83,7 +81,6 @@ class ModalDoctor extends Component {
   };
 
   render() {
-    console.log("check image: ", this.state.image);
     return (
       <Modal
         isOpen={this.props.isOpen}

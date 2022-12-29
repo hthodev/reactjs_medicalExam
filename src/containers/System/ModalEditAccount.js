@@ -73,25 +73,23 @@ class ModalEditAccount extends Component {
     let data = event.target.files;
     let file = data[0];
 
-    console.log("file: ", data[0]);
 
     if (file) {
       let base64 = await CommonUtils.getBase64(file);
 
-      console.log("image: ", base64);
       this.setState({
         image: base64,
       });
     }
   };
   render() {
-    console.log("check props: ", this.state);
     return (
       <Modal
         isOpen={this.props.isOpen}
         toggle={() => this.toggle()}
         className={"modal-doctor-container"}
         size="lg"
+        
       >
         <ModalHeader toggle={() => this.toggle()}>Edit New Account</ModalHeader>
         <ModalBody>

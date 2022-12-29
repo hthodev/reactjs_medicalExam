@@ -4,6 +4,7 @@ export const path = {
   LOGIN: "/login",
   LOG_OUT: "/logout",
   SYSTEM: "/system",
+  DETAIL_DOCTOR: "/detail-doctor/:id",
 };
 
 export const LANGUAGES = {
@@ -25,3 +26,9 @@ export const YesNoObj = {
   YES: "Y",
   NO: "N",
 };
+export const ROLE_USER = {
+  ADMIN: "R1",
+  DOCTOR: "R2",
+  USER: "R3"
+
+}

@@ -1,5 +1,6 @@
 
 {
+    "welcome": "Xin chào, ",
     "home-header": {
         "specialty": "Chuyên khoa",
         "search-doctor": "Tìm bác sĩ theo chuyên khoa",
@@ -9,8 +10,8 @@
         "select-doctor": "Chọn một bác sĩ giỏi",
         "fee": "Gói kiểm tra",
         "check-health": "Kiểm tra sức khỏe tổng quát",
-        "support": "Hỗ trợ",
-        "welcome": "Xin chào, "
+        "support": "Hỗ trợ"
+
         
         
     },
@@ -76,7 +77,13 @@
                 "clinic": "Quản lý phòng khám",
                 "specialty": "Quản lý chuyên khoa"
 
+            },
+            "doctor" : {
+                "schedule-plan": "Quản lý kế hoạch",
+                "schedule-menu" : "Quản lý kế hoạch khám bệnh"
             }
+
         }
+    
     }
 }

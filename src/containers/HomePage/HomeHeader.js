@@ -22,6 +22,7 @@ class HomeHeader extends Component {
 
   render() {
     return (
+      
       <React.Fragment>
         <div className="home-header-container">
           <div className="home-header-content">
@@ -30,7 +31,7 @@ class HomeHeader extends Component {
                 className="fas fa-bars"
                 style={{ fontSize: "25px", cursor: "pointer" }}
               ></i>
-              <div className="header-logo"></div>
+              <div className="header-logo" ></div>
             </div>
             <div className="center-content">
               <div className="child-content">
@@ -86,7 +87,7 @@ class HomeHeader extends Component {
             </div>
           </div>
         </div>
-
+      {this.props.isShowBanner === true &&
         <div className="home-header-banner">
           <div className="content-up">
             <div className="title1">
@@ -155,7 +156,7 @@ class HomeHeader extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> }
       </React.Fragment>
     );
   }

@@ -1,29 +1,34 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
-  getAllUser,
+  getAllDoctor,
   createNewDoctor,
   editAccount,
   deleteAccount,
+  saveDetailDoctor,
 } from "../../services/userService";
 import "./UserManager.scss";
 import ModalDoctor from "./ModalDoctor";
 import ModalEditAccount from "./ModalEditAccount";
 import { emitter } from "../../utils/emitter";
+import ModalUpdateInfoDoctor from "./ModalUpdateInfoDoctor";
+import jwt_decode from "jwt-decode";
 
-class UserManage extends Component {
+class DoctorManager extends Component {
   constructor(props) {
     super(props);
     this.state = {
       arrUser: [],
       isOpenModalDoctor: false,
       isOpenModalAccount: false,
+      isOpenModalUpdateInfo: false,
       accountEdit: {},
+      updateInfo: {}
     };
   }
 
   async componentDidMount() {
-    await this.getAllUser();
+    await this.getAllDoctor();
   }
   toggleOpenWindowDoctor = () => {
     this.setState({
@@ -35,13 +40,24 @@ class UserManage extends Component {
       isOpenModalAccount: !this.state.isOpenModalAccount,
     });
   };
+  toggleOpenWindowUpdate = () => {
+    this.setState({
+      isOpenModalUpdateInfo: !this.state.isOpenModalUpdateInfo,
+    });
+  };
 
-  getAllUser = async () => {
-    let response = await getAllUser();
+  getAllDoctor = async () => {
+    let response = await getAllDoctor();
     if (response && response.errCode === 0) {
-      this.setState({
-        arrUser: response.result,
-      });
+      let token = this.props.userInfo;
+      let userInfo = jwt_decode(token);
+
+      if(userInfo.roleid === "R1") {
+        this.setState({
+          arrUser: response.result,
+        });
+      }
+      
     }
   };
 
@@ -51,7 +67,7 @@ class UserManage extends Component {
       if (response && response.result.errCode !== 0) {
         alert(response.result.message);
       } else {
-        this.getAllUser();
+        this.getAllDoctor();
         this.setState({
           isOpenModalDoctor: false,
         });
@@ -59,6 +75,29 @@ class UserManage extends Component {
       }
     } catch (error) {}
   };
+  handleUpdateInfoDoctor = (data) => {
+    this.setState({
+      isOpenModalUpdateInfo: !this.state.isOpenModalUpdateInfo,
+      accountEdit: data,
+      updateInfo: data,
+    });
+           
+  }
+  doUpdateInfo = async (data) => {
+    try {
+      let response = await saveDetailDoctor(data);
+      if (response && response.result.errCode === 0) {
+        this.setState({
+          isOpenModalUpdateInfo: false,
+        });
+      } else {
+        alert(response.result.message);
+      }
+
+    } catch (error) {
+      
+    }
+  }
   handleEdit = async (data) => {
     this.setState({
       isOpenModalAccount: !this.state.isOpenModalAccount,
@@ -70,12 +109,13 @@ class UserManage extends Component {
       let response = await deleteAccount(data.id);
       if (response && response.result.errCode === 0) {
         alert(response.result.message);
-        this.getAllUser();
+        this.getAllDoctor();
       } else {
         alert(response.result.message);
       }
     } catch (error) {}
   };
+  
   doEditAccount = async (data) => {
     try {
       let response = await editAccount(data.id, data);
@@ -83,12 +123,11 @@ class UserManage extends Component {
         this.setState({
           isOpenModalAccount: false,
         });
-        this.getAllUser();
+        this.getAllDoctor();
       } else {
         alert(response.result.message);
       }
     } catch (error) {}
-    console.log(data.id, data);
   };
 
   render() {
@@ -105,6 +144,16 @@ class UserManage extends Component {
             editAccount={this.doEditAccount}
             toggleFromParent={this.toggleOpenWindowAccount}
             currentAccount={this.state.accountEdit}
+          />
+        )}
+        {this.state.isOpenModalUpdateInfo && (
+          <ModalUpdateInfoDoctor
+            isOpen={this.state.isOpenModalUpdateInfo}
+            updateInfo = {this.handleUpdateInfoDoctor}
+            doUpdate = {this.doUpdateInfo}
+            toggleUpdateParent={this.toggleOpenWindowUpdate}
+            currentAccount={this.state.accountEdit}
+            updateAccount= {this.state.updateInfo}
           />
         )}
         <div className="title text-center">Manage users</div>
@@ -134,16 +183,24 @@ class UserManage extends Component {
             {this.state.arrUser &&
               this.state.arrUser.map((item, index) => {
                 return (
-                  <tr>
+                 
+                  <tr key={index}>
+                    
                     <th scope="row">{index}</th>
                     <td>{item.email}</td>
                     <td>{item.firstName}</td>
                     <td>{item.lastName}</td>
                     <td>{item.address}</td>
                     <td>{item.phone}</td>
-                    <td>{item.roleid === 2 ? "Member" : "Doctor"}</td>
+                    <td>{item.roleid === "R2" ? "Doctor" : item.roleid === 'R3' ? "Member" : "Admin" }</td>
 
                     <td>
+                    <button
+                        onClick={() => this.handleUpdateInfoDoctor(item)}
+                        className="btn btn-custom"
+                      >
+                        <i className="fa-solid fa-file-pen"></i>
+                      </button>
                       <button
                         className="btn btn-custom"
                         onClick={() => this.handleEdit(item)}
@@ -168,11 +225,14 @@ class UserManage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    isLoggedIn: state.user.isLoggedIn,
+    userInfo: state.user.userInfo,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserManage);
+export default connect(mapStateToProps, mapDispatchToProps)(DoctorManager);

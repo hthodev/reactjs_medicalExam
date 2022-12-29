@@ -35,8 +35,9 @@ class Login extends Component {
     this.setState({
       errMessage: "",
     });
+    let result = await handleLogin(this.state.username, this.state.password);
+
     try {
-      let result = await handleLogin(this.state.username, this.state.password);
       if (result && result.message.errCode !== 0) {
         this.setState({
           errMessage: result.message.message,
@@ -45,7 +46,7 @@ class Login extends Component {
         this.props.userLoginSucces(result.message.acess_token);
       }
     } catch (error) {
-      if (error.response.data) {
+      if (result && result.response.data) {
         this.setState({
           errMessage: error.response.data.message,
         });

@@ -1,4 +1,5 @@
 {
+    "welcome": "Welcome, ", 
 
     "home-header": {
         "specialty": "Specialty",
@@ -9,8 +10,7 @@
         "select-doctor": "Choose a good doctor",
         "fee": "Checkup package",
         "check-health": "General health check",
-        "support": "Support",
-        "welcome": "Welcome, "
+        "support": "Support"
         
     },
     "banner": {
@@ -74,6 +74,10 @@
             
                 "clinic": "Clinic management",
                 "specialty": "Specialty management"
+            },
+            "doctor" : {
+                "schedule-plan": "Manage Plan",
+                "schedule-menu" : "Manage medical examination plan"
             }
         }
     }
