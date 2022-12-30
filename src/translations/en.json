@@ -10,8 +10,22 @@
         "select-doctor": "Choose a good doctor",
         "fee": "Checkup package",
         "check-health": "General health check",
-        "support": "Support"
-        
+        "support": "Support",
+        "examination-schedule": "Examination Schedule",
+        "no-schedule" : "No appointment scheduled",
+        "info-booking": "Information to book a medical appointment",
+        "save": "Book schedule",
+        "cancel": "Cancel",
+        "info": {
+            "price": "Price: ",
+            "name": "Your Name",
+            "phone": "Phone Number",
+            "email": "Contact Email",
+            "address": "Address",
+            "who": "Who to booking?",
+            "sex": "Sex",
+            "describe": "Describe your problem"
+        }
     },
     "banner": {
         "main-content": "HEALTH FOUNDATION",
@@ -77,7 +91,14 @@
             },
             "doctor" : {
                 "schedule-plan": "Manage Plan",
-                "schedule-menu" : "Manage medical examination plan"
+                "schedule-menu" : "Manage medical examination plan",
+
+                "manager-schedule": {
+                    "manager-schedule": "Manage medical treatment plan",
+                    "choose-doctor": "Doctor",
+                    "choose-date": "Choose your appointment schedule",
+                    "save": "Save your appointment"
+                 }
             }
         }
     }

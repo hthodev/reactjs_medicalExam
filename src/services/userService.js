@@ -36,3 +36,17 @@ export const saveDetailDoctor = (data) => {
 export const getDetailDoctor = (id) => {
   return axios.get(`get-detail-doctor?id=${id}`)
 }
+
+//ALLCODE
+
+export const getAllCode = (type) => {
+  return axios.get(`getAll-allCode?type=${type}`)
+}
+
+//Schedule
+export const postSaveBulkSchedule = (data) => {
+  return axios.post('create-schedule', data)
+}
+export const getScheduleByDate = (doctorid, date) => {
+  return axios.get(`/get-schedule-by-date?doctorid=${doctorid}&date=${date}`)
+}

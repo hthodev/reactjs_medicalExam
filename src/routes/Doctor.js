@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect, Route, Switch } from "react-router-dom";
-import DoctorManager from "../containers/System/DoctorManager";
-import CustomerManager from "../containers/System/CustomerManager";
 import Header from "../containers/Header/Header";
+import ManagerSchedule from "../containers/Doctor/System/ManagerSchedule";
+import ModalUpdateInfoDoctor from "../containers/System/ModalUpdateInfoDoctor";
 
-class System extends Component {
+class Doctor extends Component {
   render() {
-    const { systemMenuPath, isLoggedIn } = this.props;
+    const { isLoggedIn } = this.props;
 
     return (
       <React.Fragment>
@@ -15,14 +15,8 @@ class System extends Component {
         <div className="system-container">
           <div className="system-list">
             <Switch>
-           
-              <Route path="/system/doctor-manage" component={DoctorManager} />
-              <Route path="/system/customer-manage" component={CustomerManager} />
-              <Route
-                component={() => {
-                  return <Redirect to={systemMenuPath} />;
-                }}
-              />
+              <Route path="/doctor/update-info" component={ModalUpdateInfoDoctor} />
+              <Route path="/doctor/schedule-plan-manager" component={ManagerSchedule} />
             </Switch>
           </div>
         </div>
@@ -42,4 +36,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(System);
+export default connect(mapStateToProps, mapDispatchToProps)(Doctor);

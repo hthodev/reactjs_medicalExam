@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getDetailDoctor } from "../../../services/userService";
-import HomeHeader from "../../HomePage/HomeHeader";
-import HomeFooter from "../../HomePage/HomeFooter";
+import { getDetailDoctor } from "../../services/userService";
+import HomeHeader from "../HomePage/HomeHeader";
+import HomeFooter from "../HomePage/HomeFooter";
 import './detaiDoctor.scss'
+import DoctorSchedule from "./DoctorSchedule";
 
 class DetailDoctor extends Component {
   constructor(props) {
@@ -34,7 +35,6 @@ class DetailDoctor extends Component {
   }
   render() {
     let detailDoctor = this.state
-    console.log("detail", detailDoctor);
     return (
       <>
         <HomeHeader/>
@@ -58,7 +58,9 @@ class DetailDoctor extends Component {
             </div>
           </div>
 
-          <div className="schedule-doctor"></div>
+          <div className="schedule-doctor">
+            <DoctorSchedule doctorIdFromParent={detailDoctor && detailDoctor.info && detailDoctor.info.id ? detailDoctor.info.id : -1}/>
+          </div>
           <div className="detail-info-doctor">
             <div className="content-info-doctor" >
               <div dangerouslySetInnerHTML={{__html: detailDoctor && detailDoctor.markdown && detailDoctor.markdown.contentHTML}}></div>
@@ -75,7 +77,10 @@ class DetailDoctor extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    userInfo: state.user.userInfo,
+    language: state.app.language,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

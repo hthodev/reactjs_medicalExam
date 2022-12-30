@@ -10,9 +10,22 @@
         "select-doctor": "Chọn một bác sĩ giỏi",
         "fee": "Gói kiểm tra",
         "check-health": "Kiểm tra sức khỏe tổng quát",
-        "support": "Hỗ trợ"
-
-        
+        "support": "Hỗ trợ",
+        "examination-schedule": "Lịch khám",
+        "no-schedule" : "Không có lịch khám",
+        "info-booking": "Thông tin đặt lịch khám bệnh",
+        "save": "Đặt lịch",
+        "cancel": "Huỷ bỏ",
+        "info": {
+            "price": "Giá khám bệnh: ",
+            "name": "Tên của bạn",
+            "phone": "Số điện thoại",
+            "email": "Email liên hệ",
+            "address": "Địa chỉ",
+            "who": "Đặt cho ai?",
+            "sex": "Giới tính",
+            "describe": "Mô tả vấn đề của bạn"
+        }
         
     },
     "banner": {
@@ -80,7 +93,15 @@
             },
             "doctor" : {
                 "schedule-plan": "Quản lý kế hoạch",
-                "schedule-menu" : "Quản lý kế hoạch khám bệnh"
+                "schedule-menu" : "Quản lý kế hoạch khám bệnh",
+
+                "manager-schedule": {
+                   "manager-schedule": "Quản lý kế hoạch khám chữa bệnh",
+                   "choose-doctor": "Bác Sĩ",
+                   "choose-date": "Chọn lịch đăng ký khám",
+                   "save": "Lưu lịch khám"
+
+                }
             }
 
         }

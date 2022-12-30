@@ -11,10 +11,7 @@ export const adminMenu = [
         name: "menu.system.admin.manage-user",
               link: "/system/customer-manage",
       },
-      {
-        name: "menu.system.doctor.schedule-menu",
-        link: "/system/user-manager",
-      },
+
       // { name: 'menu.system.system-parameter.header', link: '/system/system-parameter' },
     ],
   },
@@ -39,11 +36,11 @@ export const doctorMenu = [
     menus: [
       {
         name: "menu.system.doctor.schedule-menu",
-        link: "/system/schedule-plan-manager",
+        link: "/doctor/schedule-plan-manager",
       },
 
       {name: "menu.system.doctor.update-info",
-      link: "/system/update-info"}
+      link: "/doctor/update-info"}
       // { name: 'menu.system.system-parameter.header', link: '/system/system-parameter' },
     ],
   },
