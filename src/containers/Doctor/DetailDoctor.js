@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getDetailDoctor } from "../../services/userService";
+import { getDetailDoctor, getMoreInfoDoctor } from "../../services/userService";
 import HomeHeader from "../HomePage/HomeHeader";
 import HomeFooter from "../HomePage/HomeFooter";
 import './detaiDoctor.scss'
 import DoctorSchedule from "./DoctorSchedule";
-
+import InfoBooking from "../Patient/InfoBooking";
 class DetailDoctor extends Component {
   constructor(props) {
     super(props)
@@ -13,6 +13,7 @@ class DetailDoctor extends Component {
       info: "",
       markdown: "",
       position: "",
+      extraInfor:''
     }
   }
 
@@ -20,16 +21,19 @@ class DetailDoctor extends Component {
     if(this.props.match && this.props.match.params && this.props.match.params.id){
       let id = this.props.match.params.id;
       let response = await getDetailDoctor(id)
+      let response2 = await getMoreInfoDoctor(id)
 
       this.setState({
         info: response.data,
         markdown: response.data.markdown,
         position: response.data.positionData,
+        extraInfor:response2.result 
       })
     }
 
   }
 
+  
   componentDidUpdate(prevProps, prevState, snapshot){
 
   }
@@ -60,6 +64,9 @@ class DetailDoctor extends Component {
 
           <div className="schedule-doctor">
             <DoctorSchedule doctorIdFromParent={detailDoctor && detailDoctor.info && detailDoctor.info.id ? detailDoctor.info.id : -1}/>
+            <InfoBooking doctorIdFromParent={detailDoctor && detailDoctor.info && detailDoctor.info.id }
+              extraInfor={this.state.extraInfor}
+            />
           </div>
           <div className="detail-info-doctor">
             <div className="content-info-doctor" >

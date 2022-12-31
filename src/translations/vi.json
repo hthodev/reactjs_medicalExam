@@ -24,7 +24,12 @@
             "address": "Địa chỉ",
             "who": "Đặt cho ai?",
             "sex": "Giới tính",
-            "describe": "Mô tả vấn đề của bạn"
+            "describe": "Mô tả vấn đề của bạn",
+            "address": "Địa chỉ",
+            "payment": "Thanh toán bằng: ",
+            "hide": "Ẩn thông tin",
+            "show": "Xem chi tiết"
+            
         }
         
     },

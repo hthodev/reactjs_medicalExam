@@ -24,7 +24,11 @@
             "address": "Address",
             "who": "Who to booking?",
             "sex": "Sex",
-            "describe": "Describe your problem"
+            "describe": "Describe your problem",
+            "address": "Address",
+            "payment": "Method Payment: ",
+            "hide": "Hide Information",
+            "show": "Show Detail"
         }
     },
     "banner": {

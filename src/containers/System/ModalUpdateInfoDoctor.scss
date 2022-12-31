@@ -1,0 +1,25 @@
+.more-info-extra {
+    .content-select{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1%;
+        select{
+            border-bottom: 1px solid #ddd;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 0;
+            color: #337ab7;
+            font-weight: 600;
+        
+            option {
+                cursor: pointer;
+            }
+        }
+    }
+    .content-input{
+        margin-bottom: 2%;
+    }
+}

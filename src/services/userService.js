@@ -36,6 +36,12 @@ export const saveDetailDoctor = (data) => {
 export const getDetailDoctor = (id) => {
   return axios.get(`get-detail-doctor?id=${id}`)
 }
+export const saveDoctorMore = (data) => {
+  return axios.post('save-more-info-doctor',data)
+}
+export const getMoreInfoDoctor = (id) => {
+  return axios.get(`get-more-info-doctor?id=${id}`)
+}
 
 //ALLCODE
 
@@ -49,4 +55,9 @@ export const postSaveBulkSchedule = (data) => {
 }
 export const getScheduleByDate = (doctorid, date) => {
   return axios.get(`/get-schedule-by-date?doctorid=${doctorid}&date=${date}`)
+}
+
+//Booking
+export const postBooking = (data) => {
+  return axios.post('/create-booking', data)
 }

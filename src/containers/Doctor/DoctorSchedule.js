@@ -15,7 +15,10 @@ class DoctorSchedule extends Component {
       allDays: '',
       allAvalableTime: '',
       isOpenModalTimeModal: '',
-      dataScheduleTimeModal: '0'
+      dateSchedule: '',
+      timeTypeSchedule: '',
+      doctorId: '',
+      doctorInfo: ''
     }
   }
 
@@ -23,6 +26,7 @@ class DoctorSchedule extends Component {
     let {language} = this.props
     this.setArrDays(language)
   }
+  
   componentDidUpdate(prevProps){
     if(this.props.language !==prevProps.language) {
       this.setArrDays(this.props.language)
@@ -63,10 +67,12 @@ class DoctorSchedule extends Component {
     }
   }
 
-  handleClickScheduleTime = (time) => {
+  handleClickScheduleTime = (date, timeType, doctorId) => {
     this.setState({
       isOpenModalTimeModal: true,
-      dataScheduleTimeModal: time
+      dateSchedule: date,
+      timeTypeSchedule: timeType,
+      doctorId: doctorId
     })
   }
 
@@ -75,7 +81,8 @@ class DoctorSchedule extends Component {
   }
 
   render() {
-    let {allDays, allAvalableTime, isOpenModalTimeModal, dataScheduleTimeModal} = this.state
+    let {allDays, allAvalableTime, isOpenModalTimeModal, dateSchedule, timeTypeSchedule, doctorId} = this.state
+    console.log("schedule", this.state);
     let {language} = this.props
     return (
       <>
@@ -108,7 +115,7 @@ class DoctorSchedule extends Component {
 
             return (
               <button key={index}
-              onClick={() => this.handleClickScheduleTime()}
+              onClick={() => this.handleClickScheduleTime(item.date, item.timeType, item.doctorId)}
               > {timeDisplay} </button>
             )
           }) : <FormattedMessage id="home-header.no-schedule"/>}
@@ -119,7 +126,8 @@ class DoctorSchedule extends Component {
         <BookingModal 
         isOpenModal={isOpenModalTimeModal}
         closeBooking={this.closeBooking}
-        dataTime={dataScheduleTimeModal}
+        dataTime={[dateSchedule, timeTypeSchedule]}
+        doctorId={doctorId}
         />
       </>
       )
