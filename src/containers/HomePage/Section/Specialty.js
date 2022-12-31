@@ -29,35 +29,35 @@ class Specialty extends Component {
             <Slider {...this.props.settings}>
               <div className="specialty-customize">
                 <div className="bg-img  section-specialty" />
-                <div className=""> Co xuong 1</div>
+                <div className=""> Cơ xương khớp</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img  section-specialty" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img  section-specialty2" />
+                <div className=""> Thần kinh</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-specialty" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-specialty3" />
+                <div className=""> Tiêu hoá</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-specialty" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-specialty4" />
+                <div className=""> Tim mạch</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-specialty" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-specialty5" />
+                <div className=""> Tai mũi họng</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-specialty" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-specialty6" />
+                <div className=""> Cột sống</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-specialty" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-specialty7" />
+                <div className=""> Y học cổ truyền</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-specialty" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-specialty8" />
+                <div className=""> Da liễu</div>
               </div>
             </Slider>
           </div>

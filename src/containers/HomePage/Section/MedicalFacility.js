@@ -13,7 +13,7 @@ class MedicalFacility extends Component {
           <div className="section-header">
             <span className="title-section">
               {" "}
-              <FormattedMessage id="section.popular-specialty" />
+              <FormattedMessage id="section.outstanding-facility" />
             </span>
             <button className="btn-section">
               <FormattedMessage id="section.see-more" />
@@ -24,35 +24,35 @@ class MedicalFacility extends Component {
             <Slider {...this.props.settings}>
               <div className="specialty-customize">
                 <div className="bg-img  section-medical-facility" />
-                <div className=""> Co xuong 1</div>
+                <div className=""> Bệnh viện Hữu nghị Việt Đức</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img  section-medical-facility" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img  section-medical-facility2" />
+                <div className=""> Bệnh viện Chợ Rẫy</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-medical-facility" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-medical-facility3" />
+                <div className=""> Phòng khám Bệnh viện Đại học Y Dược 1</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-medical-facility" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-medical-facility4" />
+                <div className=""> Bệnh viện K - Cơ sở Phan Chu Trinh </div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-medical-facility" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-medical-facility5" />
+                <div className=""> Trung tâm Khám sức khỏe định kỳ, Bệnh viện Trung ương Quân đội 108</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-medical-facility" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-medical-facility6" />
+                <div className=""> Bệnh viện Ung bướu Hưng Việt</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-medical-facility" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-medical-facility7" />
+                <div className=""> Hệ thống y tế MEDLATEC</div>
               </div>
               <div className="specialty-customize">
-                <div className="bg-img section-medical-facility" />
-                <div className=""> Co xuong 1</div>
+                <div className="bg-img section-medical-facility8" />
+                <div className=""> Hệ thống y tế MEDLATEC</div>
               </div>
             </Slider>
           </div>

@@ -39,7 +39,7 @@ class DoctorOutStanding extends Component {
           <div className="section-header">
             <span className="title-section">
               {" "}
-              <FormattedMessage id="section.popular-specialty" />
+              <FormattedMessage id="section.outstanding-doctor" />
             </span>
             <button className="btn-section">
               <FormattedMessage id="section.see-more" />
